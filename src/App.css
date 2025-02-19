@@ -1,0 +1,103 @@
+@import url('./Loader.css');
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  box-sizing: border-box;
+}
+.jokes{
+  width: 70%;
+  height: 80vh;
+  margin: 50px auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.header{
+  display: flex;
+  padding: 20px 40px;
+  align-items: center;
+  gap: 15px;
+  font-family: "Francois One", serif;
+  border-bottom: 1px solid #efefef;
+  height: 15%;
+}
+.header > h1{
+  margin: 2px 0px;
+}
+.header > img{
+  width: 45px;
+  height: 45px;
+}
+.main-body{
+  padding: 20px 40px;
+  overflow-y: scroll;
+  height: 84%;
+  font-family: "Poppins", serif;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+.dummy{
+  overflow-y: scroll;
+  padding: 10px;
+  height: 84%;
+}
+.main-body > p{
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  padding: 20px 20px;
+  margin: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.main-body:focus p{
+  opacity: 0.5;
+  filter: blur(2px);
+}
+.main-body > p:hover{
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1.04);
+}
+.credit{
+  text-align: center;
+  font-family: "Poppins", serif;
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+.credit > img{
+  width: 22px;
+  height: 22px;
+  animation: beat 1s infinite linear forwards;
+}
+@keyframes beat {
+  0%{
+    transform: scale(1.2);
+  }
+  25%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@media all and (max-width: 900px) {
+  .jokes{
+    width: 100%;
+  }
+  .main-body > p{
+    font-size: 12px;
+    text-overflow: ellipsis;
+  }
+}
