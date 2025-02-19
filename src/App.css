@@ -8,25 +8,49 @@
 *{
   box-sizing: border-box;
 }
+body{
+  margin: 0;
+  padding: 0;
+}
+.body{
+  width: 100%;
+  height: 100vh;
+  padding: 50px 0px;
+}
 .jokes{
   width: 70%;
   height: 80vh;
-  margin: 50px auto;
+  margin: 0px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .header{
   display: flex;
   padding: 20px 40px;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
   font-family: "Francois One", serif;
   border-bottom: 1px solid #efefef;
   height: 15%;
 }
-.header > h1{
+.header > div:last-child {
+  padding: 9px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+  background-color: transparent;
+}
+.header > div:last-child > svg{
+  pointer-events: none;
+}
+.header > div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header > div > h1{
   margin: 2px 0px;
 }
-.header > img{
+.header > div > img{
   width: 45px;
   height: 45px;
 }
@@ -71,6 +95,7 @@
   align-items: center;
   gap: 5px;
   justify-content: center;
+  padding: 15px 0px;
 }
 .credit > img{
   width: 22px;
