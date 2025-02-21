@@ -81,6 +81,10 @@ body{
   opacity: 0.5;
   filter: blur(2px);
 }
+.main-body:not(:hover) p{
+  opacity: 1;
+  filter: blur(0px);
+}
 .main-body > p:hover{
   opacity: 1;
   filter: blur(0px);

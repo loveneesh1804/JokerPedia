@@ -45,14 +45,14 @@ const Jokes = ({ darkMode, setDarkMode }) => {
 
       target = boxRef.current.querySelector(":last-child");
       if (!target) return;
-
+      
       observer.observe(target);
     }
     return () => {
       if (target) observer.unobserve(target);
       if (observer) observer.disconnect();
     };
-  }, [data]);
+  }, [data,darkMode]);
 
   const handleChange = () => {
     setDarkMode((prev) =>{
