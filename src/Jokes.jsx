@@ -32,6 +32,7 @@ const Jokes = ({ darkMode, setDarkMode }) => {
   useEffect(() => {
     let observer;
     let target;
+    if(loading) return ;
     if (boxRef.current) {
       observer = new IntersectionObserver(
         (entries) => {
@@ -52,7 +53,7 @@ const Jokes = ({ darkMode, setDarkMode }) => {
       if (target) observer.unobserve(target);
       if (observer) observer.disconnect();
     };
-  }, [data, darkMode]);
+  }, [data]);
 
   const handleChange = () => {
     setDarkMode((prev) => {
