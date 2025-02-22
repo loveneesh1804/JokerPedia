@@ -45,17 +45,17 @@ const Jokes = ({ darkMode, setDarkMode }) => {
 
       target = boxRef.current.querySelector(":last-child");
       if (!target) return;
-      
+
       observer.observe(target);
     }
     return () => {
       if (target) observer.unobserve(target);
       if (observer) observer.disconnect();
     };
-  }, [data,darkMode]);
+  }, [data, darkMode]);
 
   const handleChange = () => {
-    setDarkMode((prev) =>{
+    setDarkMode((prev) => {
       localStorage.setItem("darkMode", !prev);
       return !prev;
     });
@@ -69,7 +69,7 @@ const Jokes = ({ darkMode, setDarkMode }) => {
       className="jokes"
       style={{
         backgroundColor: isDarkModeBackground(),
-        border: darkMode ? "1px solid #001B18" : "",
+        border: `1px solid ${darkMode ? '#001B18' : 'transparent'}`,
       }}
     >
       <div
@@ -103,21 +103,12 @@ const Jokes = ({ darkMode, setDarkMode }) => {
       </div>
       {data.length ? (
         <div
-          style={{ scrollbarColor: darkMode ? "#6B6B6B #2C2C2C" : "auto" }}
-          className="main-body"
+          className={`main-body ${darkMode ? "dark" : "light"}`}
           tabIndex={1}
           ref={boxRef}
         >
-          {data.map((el) => (
-            <p
-              style={{
-                color: isDarkModeText(),
-                border: `1px solid ${darkMode ? "#001B18" : "#efefef"}`,
-              }}
-              key={el.id + Math.random()}
-            >
-              {el.joke}
-            </p>
+          {data.map((el, i) => (
+            <p key={i}>{el.joke}</p>
           ))}
           {loading ? <Loader /> : undefined}
         </div>

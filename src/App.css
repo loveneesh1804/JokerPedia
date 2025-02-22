@@ -69,13 +69,23 @@ body{
   height: 84%;
 }
 .main-body > p{
-  border: 1px solid #efefef;
   border-radius: 4px;
   padding: 20px 20px;
   margin: 0px;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out,border 0s,color 0s;
+}
+.main-body.dark{
+  scrollbar-color: #6B6B6B #2C2C2C;
+}
+.main-body.dark > p{
+  border: 1px solid #001B18;
+  color: white;
+}
+.main-body.light > p{
+  border: 1px solid #efefef;
+  color: black;
 }
 .main-body:focus p{
   opacity: 0.5;
