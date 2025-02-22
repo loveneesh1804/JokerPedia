@@ -58,6 +58,8 @@ body {
   padding: 20px 40px;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
   height: 84%;
   font-family: "Poppins", serif;
   display: flex;
@@ -80,7 +82,7 @@ body {
 .main-body.dark {
   scrollbar-color: #6b6b6b #2c2c2c;
 }
-.main-body.dark::-webkit-scrollbar,
+/* .main-body.dark::-webkit-scrollbar,
 .dummy.dark::-webkit-scrollbar {
   background-color: #6b6b6b;
   width: 12px;
@@ -105,7 +107,7 @@ body {
   height: 10px;
   border: 2px solid transparent;
   background-clip: content-box;
-}
+} */
 .main-body.dark > p {
   border: 1px solid #001b18;
   color: white;
@@ -161,6 +163,7 @@ body {
 @media all and (max-width: 900px) {
   .body {
     padding: 0;
+    overflow: hidden;
   }
   .header {
     padding: 10px 20px;
@@ -168,13 +171,14 @@ body {
   }
   .jokes {
     width: 100%;
-    height: 95vh;
+    height: 85vh;
     box-shadow: none;
     border-bottom: 1px solid #efefef !important;
     overflow-x: hidden;
   }
   .main-body {
     padding: 10px;
+    height: 88%;
   }
   .main-body > p {
     font-size: 12px;
