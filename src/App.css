@@ -1,29 +1,29 @@
-@import url('./Loader.css');
+@import url("./Loader.css");
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*{
+* {
   box-sizing: border-box;
 }
-body{
+body {
   margin: 0;
   padding: 0;
 }
-.body{
+.body {
   width: 100%;
   height: 100vh;
   padding: 50px 0px;
 }
-.jokes{
+.jokes {
   width: 70%;
   height: 80vh;
   margin: 0px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.header{
+.header {
   display: flex;
   padding: 20px 40px;
   align-items: center;
@@ -39,68 +39,95 @@ body{
   transition: all 0.1s ease-in-out;
   background-color: transparent;
 }
-.header > div:last-child > svg{
+.header > div:last-child > svg {
   pointer-events: none;
 }
-.header > div{
+.header > div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.header > div > h1{
+.header > div > h1 {
   margin: 2px 0px;
 }
-.header > div > img{
+.header > div > img {
   width: 45px;
   height: 45px;
 }
-.main-body{
+.main-body {
   padding: 20px 40px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 84%;
   font-family: "Poppins", serif;
   display: flex;
   flex-direction: column-reverse;
   gap: 10px;
 }
-.dummy{
+.dummy {
   overflow-y: scroll;
   padding: 10px;
   height: 84%;
 }
-.main-body > p{
+.main-body > p {
   border-radius: 4px;
   padding: 20px 20px;
   margin: 0px;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out,border 0s,color 0s;
+  transition: all 0.3s ease-in-out, border 0s, color 0s;
 }
-.main-body.dark{
-  scrollbar-color: #6B6B6B #2C2C2C;
+.main-body.dark {
+  scrollbar-color: #6b6b6b #2c2c2c;
 }
-.main-body.dark > p{
-  border: 1px solid #001B18;
+.main-body.dark::-webkit-scrollbar,
+.dummy.dark::-webkit-scrollbar {
+  background-color: #6b6b6b;
+  width: 12px;
+}
+.main-body.light::-webkit-scrollbar,
+.dummy.light::-webkit-scrollbar {
+  background-color: #fafafa;
+  width: 12px;
+}
+.main-body.dark::-webkit-scrollbar-thumb,
+.dummy.dark::-webkit-scrollbar-thumb {
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  height: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.main-body.light::-webkit-scrollbar-thumb,
+.dummy.light::-webkit-scrollbar-thumb {
+  background-color: #C2C2C2;
+  border-radius: 20px;
+  height: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.main-body.dark > p {
+  border: 1px solid #001b18;
   color: white;
 }
-.main-body.light > p{
+.main-body.light > p {
   border: 1px solid #efefef;
   color: black;
 }
-.main-body:focus p{
+.main-body:focus p {
   opacity: 0.5;
   filter: blur(2px);
 }
-.main-body:not(:hover) p{
+.main-body:not(:hover) p {
   opacity: 1;
   filter: blur(0px);
 }
-.main-body > p:hover{
+.main-body > p:hover {
   opacity: 1;
   filter: blur(0px);
   transform: scale(1.04);
 }
-.credit{
+.credit {
   text-align: center;
   font-family: "Poppins", serif;
   font-weight: 800;
@@ -111,32 +138,50 @@ body{
   justify-content: center;
   padding: 15px 0px;
 }
-.credit > img{
+.credit > img {
   width: 22px;
   height: 22px;
   animation: beat 1s infinite linear forwards;
 }
 @keyframes beat {
-  0%{
+  0% {
     transform: scale(1.2);
   }
-  25%{
+  25% {
     transform: scale(1.1);
   }
-  50%{
+  50% {
     transform: scale(1.2);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
 
 @media all and (max-width: 900px) {
-  .jokes{
-    width: 100%;
+  .body {
+    padding: 0;
   }
-  .main-body > p{
+  .header {
+    padding: 10px 20px;
+    height: 10vh;
+  }
+  .jokes {
+    width: 100%;
+    height: 95vh;
+    box-shadow: none;
+    border-bottom: 1px solid #efefef !important;
+    overflow-x: hidden;
+  }
+  .main-body {
+    padding: 10px;
+  }
+  .main-body > p {
     font-size: 12px;
     text-overflow: ellipsis;
+  }
+  .credit {
+    margin: 0;
+    padding: 10px;
   }
 }

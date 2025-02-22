@@ -1,8 +1,8 @@
 .loader {
   width: 22px;
-  height: 22px;
+  min-height: 22px;
   border-radius: 50%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   margin: 10px auto;
   border: 2px solid #b9bec2;
   animation: spinner-bulqg1 0.8s infinite linear alternate,

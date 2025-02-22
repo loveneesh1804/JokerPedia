@@ -114,7 +114,7 @@ const Jokes = ({ darkMode, setDarkMode }) => {
         </div>
       ) : (
         <div
-          className="dummy"
+          className={`dummy ${darkMode ? 'dark' : 'light'}`}
           style={{ scrollbarColor: darkMode ? "#6B6B6B #2C2C2C" : "auto" }}
         >
           <Loader />
