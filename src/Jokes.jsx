@@ -30,17 +30,22 @@ const Jokes = ({ darkMode, setDarkMode }) => {
   }, [isFetch]);
 
   useEffect(() => {
-    if (loading) {
-      document.querySelector('.main-body').style.webkitOverflowScrolling = 'auto';
-    } else {
-      document.querySelector('.main-body').style.webkitOverflowScrolling = 'touch';
+    const mainBodyElement = document.querySelector(".main-body");
+    if (mainBodyElement) {
+      if (loading) {
+        document.querySelector(".main-body").style.webkitOverflowScrolling =
+          "auto";
+      } else {
+        document.querySelector(".main-body").style.webkitOverflowScrolling =
+          "touch";
+      }
     }
   }, [loading]);
 
   useEffect(() => {
     let observer;
     let target;
-    if(loading) return ;
+    if (loading) return;
     if (boxRef.current) {
       observer = new IntersectionObserver(
         (entries) => {
@@ -78,7 +83,7 @@ const Jokes = ({ darkMode, setDarkMode }) => {
       className="jokes"
       style={{
         backgroundColor: isDarkModeBackground(),
-        border: `1px solid ${darkMode ? '#001B18' : 'transparent'}`,
+        border: `1px solid ${darkMode ? "#001B18" : "transparent"}`,
       }}
     >
       <div
@@ -123,7 +128,7 @@ const Jokes = ({ darkMode, setDarkMode }) => {
         </div>
       ) : (
         <div
-          className={`dummy ${darkMode ? 'dark' : 'light'}`}
+          className={`dummy ${darkMode ? "dark" : "light"}`}
           style={{ scrollbarColor: darkMode ? "#6B6B6B #2C2C2C" : "auto" }}
         >
           <Loader />
