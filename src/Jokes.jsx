@@ -30,19 +30,6 @@ const Jokes = ({ darkMode, setDarkMode }) => {
   }, [isFetch]);
 
   useEffect(() => {
-    const mainBodyElement = document.querySelector(".main-body");
-    if (mainBodyElement) {
-      if (loading) {
-        document.querySelector(".main-body").style.webkitOverflowScrolling =
-          "auto";
-      } else {
-        document.querySelector(".main-body").style.webkitOverflowScrolling =
-          "touch";
-      }
-    }
-  }, [loading]);
-
-  useEffect(() => {
     let observer;
     let target;
     if (loading) return;
