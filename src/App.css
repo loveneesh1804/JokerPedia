@@ -58,7 +58,7 @@ body {
   padding: 20px 40px;
   overflow-y: auto;
   overflow-x: hidden;
-  position: relative;
+  -webkit-overflow-scrolling: auto;
   z-index: 1;
   height: 84%;
   font-family: "Poppins", serif;
