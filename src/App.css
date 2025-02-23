@@ -65,6 +65,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   gap: 10px;
+  will-change: scroll-position;
 }
 .dummy {
   overflow-y: scroll;

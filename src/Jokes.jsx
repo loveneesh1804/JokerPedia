@@ -30,6 +30,14 @@ const Jokes = ({ darkMode, setDarkMode }) => {
   }, [isFetch]);
 
   useEffect(() => {
+    if (loading) {
+      document.querySelector('.main-body').style.webkitOverflowScrolling = 'auto';
+    } else {
+      document.querySelector('.main-body').style.webkitOverflowScrolling = 'touch';
+    }
+  }, [loading]);
+
+  useEffect(() => {
     let observer;
     let target;
     if(loading) return ;
